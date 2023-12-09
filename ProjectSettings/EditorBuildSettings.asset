@@ -11,12 +11,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/FlightSimulator/F16_Freeflight.unity
     guid: 83b6a2a477fbdc94781be3a1b2a8c9cc
-  - enabled: 0
-    path: Assets/FlightSimulator/F16_Landing.unity
-    guid: c9f8fa4ac84a28d409492fc4f2d1e148
-  - enabled: 0
+  - enabled: 1
     path: Assets/FlightSimulator/F16_Takeoff.unity
-    guid: bebc3c3814e2be14785d434f04ea056d
+    guid: d58741f6ab45c1c479710dec7432329e
+  - enabled: 1
+    path: Assets/FlightSimulator/F16_Landing.unity
+    guid: e1507a913f19ffb48a7c0a668fd06f31
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: d589904f2ba2ca542bbbfd8421bcdbac,
       type: 2}

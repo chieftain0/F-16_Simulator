@@ -24,11 +24,8 @@ public class Tutorial : MonoBehaviour
     public bool FlapState = false;
     public bool BrakeState = true;
     public bool GearsState = false;
-    public int speed;
+    public float speed;
     public float altitude;
-
-
-
 
 
     AirplaneController airplaneController;
@@ -43,10 +40,11 @@ public class Tutorial : MonoBehaviour
 
         if (Landing == true)
         {
-            rb.velocity = transform.forward * 150; //Initial velocity 150 m/s
+            rb.velocity = transform.forward * 165; //Initial velocity 150 m/s
             airplaneController.engineState = 1f;
             airplaneController.thrustPercent = 0.7f;
             airplaneController.gearsState = 0f;
+            airplaneController.brakesTorque = 0f;
 
         }
 
@@ -62,7 +60,7 @@ public class Tutorial : MonoBehaviour
         FlapState = (airplaneController.Flap == 1f);
         isMaxThrottle = (airplaneController.thrustPercent >= 1f);
         GearsState = (airplaneController.gearsState == 1f);
-        speed = (int)(rb.velocity.magnitude * 3.6f);
+        speed = rb.velocity.magnitude * 3.6f;
         altitude = transform.position.y;
 
         if (Takeoff == true)
@@ -72,6 +70,7 @@ public class Tutorial : MonoBehaviour
         else if (Landing == true)
         {
             runLandingTutorial();
+            
         }
 
     }
@@ -122,6 +121,7 @@ public class Tutorial : MonoBehaviour
                                 else
                                 {
                                     TutorialText.text = "Takeoff Successful!\n";
+                               
                                 }
                             }
                         }
@@ -173,6 +173,7 @@ public class Tutorial : MonoBehaviour
                                 else
                                 {
                                     VRTutorialText.text = "Takeoff Successful!\n";
+                                    
                                 }
                             }
                         }
@@ -181,34 +182,51 @@ public class Tutorial : MonoBehaviour
             }
         }
 
-
+        
     }
 
 
     void runLandingTutorial()
     {
-        if (airplaneController.thrustPercent > 0.3f)
+        if (airplaneController.thrustPercent > 0.4f)
         {
-            TutorialText.text = "Decrease Throttle to 30%\n";
+            TutorialText.text = "Decrease Throttle to 40%\n";
         }
         else
         {
-            if (speed > 150f)
+            if (speed > 500f)
             {
                 TutorialText.text = "Deploy Airbrakes\n";
             }
             else
             {
-                if(speed < 100f)
+                if(speed < 350f)
                 {
-                    TutorialText.text = "Deploy Ladning Flaps\n" + "Deploy Landing Gears\n";
-                }
-                else
-                {
-
+                    if(airplaneController.isLanding == 0f || GearsState == false)
+                    {
+                        TutorialText.text = "Deploy Ladning Flaps\n" + "Deploy Landing Gears\n";
+                    }
+                    else
+                    {
+                        TutorialText.text = "Approach the Landing Strip\n";
+                    }
+                    
+                    if(altitude < 5f)
+                    {
+                        TutorialText.text = "Engage Brakes\n";
+                        if(speed < 3f)
+                        {
+                            TutorialText.text = "Stall the Engine\n";
+                            if(EngineState == false)
+                            {
+                                TutorialText.text = "Landing Succesful\n";
+                            }
+                        }
+                    }
                 }
             }
-
         }
+
     }
+
 }

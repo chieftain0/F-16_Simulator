@@ -126,11 +126,11 @@ public class AirplaneController : MonoBehaviour
 
             if(GearsAxis == 1f)
             {
-                gearsState = 1f;
+                gearsState = 0f;
             }
             else if (GearsAxis == -1f)
             {
-                gearsState = 0;
+                gearsState = 1f;
             }
         }
 
