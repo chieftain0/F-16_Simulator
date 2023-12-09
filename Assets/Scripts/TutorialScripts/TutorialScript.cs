@@ -227,6 +227,45 @@ public class Tutorial : MonoBehaviour
             }
         }
 
+        if (airplaneController.thrustPercent > 0.4f)
+        {
+            VRTutorialText.text = "Decrease Throttle to 40%\n";
+        }
+        else
+        {
+            if (speed > 500f)
+            {
+                VRTutorialText.text = "Deploy Airbrakes\n";
+            }
+            else
+            {
+                if (speed < 350f)
+                {
+                    if (airplaneController.isLanding == 0f || GearsState == false)
+                    {
+                        VRTutorialText.text = "Deploy Ladning Flaps\n" + "Deploy Landing Gears\n";
+                    }
+                    else
+                    {
+                        VRTutorialText.text = "Approach the Landing Strip\n";
+                    }
+
+                    if (altitude < 5f)
+                    {
+                        VRTutorialText.text = "Engage Brakes\n";
+                        if (speed < 3f)
+                        {
+                            VRTutorialText.text = "Stall the Engine\n";
+                            if (EngineState == false)
+                            {
+                                VRTutorialText.text = "Landing Succesful\n";
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
     }
 
 }
