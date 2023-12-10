@@ -5,26 +5,22 @@ using UnityEngine;
 public class VisualLeftElevatorsControl : MonoBehaviour
 {
     public string MasterObjectName = "F16";
-    public float PitchDeflectionAngle = 15f; // Maximum deflection angle in degrees.
+    public float PitchDeflectionAngle = 15f;
     public float RollDeflectionAngle = 5f;
-    public float deflectionSpeed = 50f; // Speed of deflection.
+    public float deflectionSpeed = 50f; 
 
     AirplaneController airplaneController;
     GameObject aircraft;
 
-    private Quaternion initialRotation; // Stores the initial rotation of the flaps.
-    private Quaternion targetRotation; // The rotation the flaps are currently transitioning towards.
+    private Quaternion initialRotation;
+    private Quaternion targetRotation;
 
     void Start()
     {
         aircraft = GameObject.Find(MasterObjectName);
         airplaneController = aircraft.GetComponent<AirplaneController>();
-        // Set the initial rotation of the elevator 
-        //transform.localRotation = Quaternion.Euler(defaultX, defaultY, defaultZ);
-
-        // Store the initial rotation of the flaps when the script starts.
+      
         initialRotation = transform.localRotation;
-        // Set the target rotation to the initial rotation as a starting point.
         targetRotation = initialRotation;
     }
 

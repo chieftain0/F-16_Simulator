@@ -24,7 +24,6 @@ public class VisualAirbrakeControl : MonoBehaviour
         targetRotation = initialRotation;
     }
 
-    // Update is called once per frame
     void Update()
     {
        if (invertDirection == false)

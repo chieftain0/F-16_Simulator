@@ -5,12 +5,13 @@ using UnityEngine;
 public class VisualRudderControl : MonoBehaviour
 {
     public string MasterObjectName = "F16";
-    // Public variables that can be adjusted in the Unity Inspector
-    public float maxRudderAngle = 25f;   // Maximum rudder deflection angle in degrees
-    public float rudderSpeed = 5f;       // Speed of rudder deflection
+    
 
-    private Quaternion initialRotation; // Stores the initial rotation of the flaps.
-    private Quaternion targetRotation; // The rotation the flaps are currently transitioning towards.
+    public float maxRudderAngle = 25f;   
+    public float rudderSpeed = 5f;       
+
+    private Quaternion initialRotation; 
+    private Quaternion targetRotation; 
 
 
     AirplaneController airplaneController;
@@ -21,9 +22,7 @@ public class VisualRudderControl : MonoBehaviour
         aircraft = GameObject.Find(MasterObjectName);
         airplaneController = aircraft.GetComponent<AirplaneController>();
 
-        // Store the initial rotation of the flaps when the script starts.
         initialRotation = transform.localRotation;
-        // Set the target rotation to the initial rotation as a starting point.
         targetRotation = initialRotation;
     }
 

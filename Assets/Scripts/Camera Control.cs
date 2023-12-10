@@ -20,7 +20,7 @@ public class CameraControl : MonoBehaviour
     void Update()
     {
         // Check for the "V" key press
-        if (Input.GetButtonDown("CameraSwtich"))
+        if (Input.GetButtonDown("CameraSwitch"))
         {
             // Disable the current camera
             cameras[currentCameraIndex].gameObject.SetActive(false);
@@ -32,7 +32,7 @@ public class CameraControl : MonoBehaviour
             cameras[currentCameraIndex].gameObject.SetActive(true);
         }
 
-        if (cameras[0].isActiveAndEnabled)
+        if (cameras[0].isActiveAndEnabled) // VR Camera
         {
             MainCanvas.enabled = false;
             VRCanvas.enabled = true;

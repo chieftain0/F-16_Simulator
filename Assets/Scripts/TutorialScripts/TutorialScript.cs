@@ -40,7 +40,7 @@ public class Tutorial : MonoBehaviour
 
         if (Landing == true)
         {
-            rb.velocity = transform.forward * 165; //Initial velocity 150 m/s
+            rb.velocity = transform.forward * 165; 
             airplaneController.engineState = 1f;
             airplaneController.thrustPercent = 0.7f;
             airplaneController.gearsState = 0f;
