@@ -41,6 +41,13 @@ public class AirplaneController : MonoBehaviour
     [SerializeField]
     Canvas VRCanvas = null;
 
+    [SerializeField]
+    GameObject HUD = null;
+    [SerializeField]
+    GameObject HMD_HUD = null;
+
+    private bool HUDswitcher = true; //a shit way to do the job
+
     //Variables to control thrust, throttle and engine
     public float thrustPercent = 0f;
     float thrustControlSpeed = 60F;
@@ -76,6 +83,7 @@ public class AirplaneController : MonoBehaviour
     {
         aircraftPhysics = GetComponent<AircraftPhysics>();
         rb = GetComponent<Rigidbody>();
+        HMD_HUD.SetActive(false);
     }
 
     private void Update()
@@ -237,6 +245,13 @@ public class AirplaneController : MonoBehaviour
             {
                 airbrakeState = 1;
             }
+        }
+
+        if(Input.GetButtonDown("HMD_switch") || Input.GetAxis("DPadHorizontal") == -1)
+        {
+            HUDswitcher = !HUDswitcher;
+            HUD.SetActive(HUDswitcher);
+            HMD_HUD.SetActive(!HUDswitcher);
         }
 
         if (MainCanvas.isActiveAndEnabled)
