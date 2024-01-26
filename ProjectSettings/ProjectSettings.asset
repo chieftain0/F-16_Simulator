@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: Aircraft Physics
+  productName: F16 Training Simulator
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -139,9 +139,6 @@ PlayerSettings:
   preloadedAssets:
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 127205675612100349, guid: f37f8441b6f52f64ba923d5be4d3a9a2, type: 2}
-  - {fileID: 11400000, guid: d589904f2ba2ca542bbbfd8421bcdbac, type: 2}
-  - {fileID: 2966141119077430577, guid: 25ea02481396e7046b652f057e2e033d, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -162,7 +159,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
     Android: com.DefaultCompany.AircraftPhysics
-    Standalone: com.DefaultCompany.Aircraft-Physics
+    Standalone: com.DefaultCompany.F16-Training-Simulator
   buildNumber:
     Standalone: 0
     VisionOS: 0
