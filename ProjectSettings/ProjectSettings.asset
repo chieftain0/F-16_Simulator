@@ -158,7 +158,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.DefaultCompany.AircraftPhysics
+    Android: com.DefaultCompany.F16TrainingSimulator
     Standalone: com.DefaultCompany.F16-Training-Simulator
   buildNumber:
     Standalone: 0
