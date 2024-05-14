@@ -204,7 +204,7 @@ public class Tutorial : MonoBehaviour
                 {
                     if(airplaneController.isLanding == 0f || GearsState == false)
                     {
-                        TutorialText.text = "Deploy Ladning Flaps\n" + "Deploy Landing Gears\n";
+                        TutorialText.text = "Deploy Landing Flaps\n" + "Deploy Landing Gears\n";
                     }
                     else
                     {
