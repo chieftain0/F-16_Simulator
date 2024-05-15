@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraControl : MonoBehaviour
 {
     public Camera[] cameras; // Array of cameras to switch between
+    public Camera ControlCamera = null;
     public Canvas VRCanvas, MainCanvas;
     private int currentCameraIndex = 0;
 
@@ -36,11 +37,13 @@ public class CameraControl : MonoBehaviour
         {
             MainCanvas.enabled = false;
             VRCanvas.enabled = true;
+            ControlCamera.gameObject.SetActive(true);
         }
         else
         {
             MainCanvas.enabled = true;
             VRCanvas.enabled = false;
+            ControlCamera.gameObject.SetActive(false);
         }
     }
 }
